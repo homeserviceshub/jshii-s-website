@@ -1,0 +1,81 @@
+.featureBackground {
+  background-color: var(--primary-dark);
+}
+.features {
+  background-color: white;
+  margin-bottom: 3rem;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px 0;
+  flex-wrap: wrap;
+}
+.feature {
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.featureImgDiv,
+.featureImgDiv img {
+  border-radius: 50%;
+}
+.featureImgDiv {
+  background-color: var(--base-color);
+  position: relative;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.featureImgDiv::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  border-radius: 50%;
+  background-color: var(--primary-dark);
+  transform: scale(0);
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.62, 0.21, 0.45, 1.52);
+  z-index: -1;
+}
+.featureImgDiv:hover::before {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 0;
+}
+.SVG {
+  opacity: 0;
+  transform: scale(0);
+  z-index: 99;
+  /* transition: all 0.4s cubic-bezier(0.62, 0.21, 0.45, 1.52); */
+}
+.featureImgDiv:hover {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.featureBtn {
+  background-color: white !important;
+  color: var(--primary-dark);
+}
+.featureBtn:hover {
+  color: white !important;
+}
+.allServices {
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}

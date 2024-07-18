@@ -1,0 +1,30 @@
+.pageHeader {
+  position: relative;
+  display: block;
+  padding: 144px 0 118px;
+  z-index: 1;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  background-image: url("/public/assets/images/main-slider-test-image.jpg");
+  opacity: 0.3;
+}
+.headerText {
+  font-size: 25px;
+  letter-spacing: 10px;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .headerText {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+}

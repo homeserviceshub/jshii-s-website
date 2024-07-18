@@ -1,0 +1,40 @@
+.thm-btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  outline: none !important;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 15px 50px 15px;
+  transition: all 0.5s linear;
+  overflow: hidden;
+  z-index: 1;
+  color: white;
+  background-color: var(--primary-dark);
+  border: none;
+  border-radius: 6px;
+}
+.thm-btn::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--ambed-base, #a47c68);
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  transition-property: all;
+  opacity: 1;
+  z-index: -1;
+}
+.thm-btn:hover::after {
+  opacity: 1;
+  width: 100%;
+}

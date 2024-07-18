@@ -1,0 +1,190 @@
+.nav {
+  display: flex;
+  padding: 0 80px;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  /* position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white; */
+}
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  position: relative;
+  display: block;
+  width: 240px;
+}
+.logo::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -10000000000px;
+  content: "";
+  right: 0;
+  background-color: var(--primary-dark);
+  z-index: -1;
+}
+.logo::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  content: "";
+  right: -5px;
+  left: 0;
+  background-color: var(--base-color);
+  z-index: -1;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 84% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0%, 84% 100%, 0% 100%);
+}
+.logo-in {
+  position: relative;
+  display: block;
+  height: 100%;
+  background-color: var(--primary-dark);
+  padding: 30px 0;
+  clip-path: polygon(0 0, 100% 0%, 84% 100%, 0% 100%);
+}
+.navLinks {
+  display: flex;
+  margin-left: 50px;
+  transition: all 0.3s ease;
+}
+.navLinks.active {
+  display: block;
+  position: absolute;
+  top: 90px;
+  z-index: 99;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-dark);
+  flex-direction: column;
+  transition: max-height 0.5s ease;
+}
+.navLinks.active {
+  max-height: 500px;
+}
+.navLink {
+  padding: 20px;
+  margin-left: 44px;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+.navLink a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.navRight {
+  display: flex;
+  align-items: center;
+  /* padding: 26px 0; padding with logo */
+  padding: 15px 0;
+}
+.navNumberOuter {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  gap: 10px;
+}
+.smallHeading {
+  font-size: 12px;
+  line-height: 15px;
+}
+.activeLink {
+  display: none;
+  bottom: -10px;
+  left: 50%;
+  width: 12px;
+  position: absolute;
+  height: 11px;
+  transform: translateX(-50%) translateY(0px);
+  border-left: 2px solid var(--primary-dark);
+  border-right: 2px solid var(--primary-dark);
+  transition: all 0.5s ease-in-out;
+}
+.navLink:hover .activeLink {
+  display: block;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+.navLink.active .activeLink {
+  display: block;
+  transition: all 0.5s ease-in-out;
+}
+
+.navLink .activeLink {
+  display: none;
+  bottom: -10px;
+  left: 50%;
+  width: 12px;
+  position: absolute;
+  height: 11px;
+  transform: translateX(-50%) translateY(0px);
+  border-left: 2px solid var(--primary-dark);
+  border-right: 2px solid var(--primary-dark);
+  transition: all 0.5s ease-in-out;
+}
+
+.activeLink::before {
+  position: absolute;
+  top: -7px;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: var(--base-color);
+  content: "";
+  transform: translateX(-50%);
+}
+
+@media (min-width: 1235px) and (max-width: 1465px) {
+  .navNumberOuter {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1234px) {
+  .nav {
+    padding: 0 40px;
+  }
+  .menu-icon {
+    display: none;
+  }
+  .navRight {
+    display: none;
+  }
+  .navLink {
+    margin-left: 5px;
+  }
+  .navLinks {
+    padding: 0;
+  }
+}
+@media (max-width: 767px) {
+  .nav {
+    padding: 0 20px;
+  }
+  .navLinks {
+    display: none;
+  }
+  .navLink {
+    margin-left: 20px;
+    padding-left: 0;
+  }
+  .navRight {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .navLinks.active {
+    display: flex;
+    padding-left: 0px;
+  }
+}
